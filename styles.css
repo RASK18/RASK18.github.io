@@ -14,6 +14,7 @@
   --line-cyan: rgba(0, 229, 255, 0.42);
   --shadow: 0 0 18px rgba(255, 49, 221, 0.34);
   --radius: 12px;
+  --hero-image-offset: clamp(-180px, calc((100vw - 1440px) * 0.18), 0px);
 }
 
 * {
@@ -52,7 +53,7 @@ body::before {
     linear-gradient(90deg, rgba(5, 0, 25, 0.78) 0%, rgba(5, 0, 25, 0.58) 30%, rgba(5, 0, 25, 0.12) 58%, rgba(5, 0, 25, 0.22) 100%),
     linear-gradient(180deg, rgba(5, 0, 25, 0.04) 0%, rgba(5, 0, 25, 0.24) 62%, rgba(5, 0, 25, 0.9) 100%),
     url("assets/disboard-hero.png");
-  background-position: center, center, center top;
+  background-position: center, center, right var(--hero-image-offset) top;
   background-repeat: no-repeat;
   background-size: auto, auto, cover;
 }
@@ -585,13 +586,17 @@ h2 {
 }
 
 @media (max-width: 840px) {
+  :root {
+    --hero-image-offset: clamp(-420px, calc((100vw - 840px) * 0.9), -60px);
+  }
+
   body::before {
     background:
       linear-gradient(180deg, rgba(5, 0, 25, 0.42) 0%, rgba(5, 0, 25, 0.86) 38%, rgba(5, 0, 25, 0.98) 100%),
       url("assets/disboard-hero.png");
-    background-position: center, 42% top;
+    background-position: center, right var(--hero-image-offset) top -88px;
     background-repeat: no-repeat;
-    background-size: 100% 100%, cover;
+    background-size: 100% 100%, auto min(82vh, 820px);
   }
 
   .site-header,
@@ -603,7 +608,9 @@ h2 {
   }
 
   .site-header {
-    gap: 10px;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
   }
 
   .intro {
@@ -619,20 +626,10 @@ h2 {
 
 @media (max-width: 520px) {
   .site-nav {
-    display: grid;
-    grid-template-columns: max-content max-content 40px;
-    width: 100%;
-    align-items: center;
-    justify-content: start;
-    gap: 18px;
-  }
-
-  .site-nav a {
-    padding: 8px 0;
+    width: auto;
   }
 
   .site-nav .icon-link {
-    justify-self: end;
     padding: 0;
   }
 
