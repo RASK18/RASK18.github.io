@@ -20,7 +20,7 @@ const projects = [
     piece: "♖",
   },
   {
-    title: "VeterinariaClaude",
+    title: "Veterinaria",
     description:
       "Landing de Olmedical Academy para presentar cursos y programas de formacion avanzada en medicina veterinaria.",
     href: "https://disboard.es/VeterinariaClaude/",
@@ -28,7 +28,17 @@ const projects = [
     status: "Web",
     tone: "gold",
     piece: "♜",
-  },
+    },
+    {
+        title: "TopTag",
+        description:
+            "TopTag is a static Steam library tag analyzer backed by a small Cloudflare Worker.",
+        href: "https://disboard.es/TopTag/",
+        tags: ["HTML", "Landing", "Steam"],
+        status: "Web",
+        tone: "gold",
+        piece: "♜",
+    },
 ];
 
 const projectGrid = document.querySelector("#project-grid");
