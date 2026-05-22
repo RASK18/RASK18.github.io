@@ -589,8 +589,9 @@ h2 {
     background:
       linear-gradient(180deg, rgba(5, 0, 25, 0.42) 0%, rgba(5, 0, 25, 0.86) 38%, rgba(5, 0, 25, 0.98) 100%),
       url("assets/disboard-hero.png");
-    background-position: 34% top;
-    background-size: auto 42vh;
+    background-position: center, 42% top;
+    background-repeat: no-repeat;
+    background-size: 100% 100%, cover;
   }
 
   .site-header,
@@ -608,7 +609,7 @@ h2 {
   .intro {
     grid-template-columns: 1fr;
     min-height: auto;
-    padding-top: 26vh;
+    padding-top: clamp(34px, 8vh, 64px);
   }
 
   .side-marker {
@@ -618,23 +619,48 @@ h2 {
 
 @media (max-width: 520px) {
   .site-nav {
+    display: grid;
+    grid-template-columns: max-content max-content 40px;
     width: 100%;
-    justify-content: space-between;
-    gap: 10px;
+    align-items: center;
+    justify-content: start;
+    gap: 18px;
   }
 
   .site-nav a {
-    padding-left: 0;
+    padding: 8px 0;
+  }
+
+  .site-nav .icon-link {
+    justify-self: end;
+    padding: 0;
   }
 
   .intro,
   .section-block,
   .about-block {
-    width: min(100% - 28px, 1500px);
+    width: calc(100% - 32px);
+    max-width: 1500px;
+  }
+
+  .intro-copy,
+  .project-body {
+    min-width: 0;
   }
 
   h1 {
-    font-size: clamp(3rem, 15vw, 4.35rem);
+    font-size: clamp(2.6rem, 12.5vw, 3.4rem);
+    line-height: 0.98;
+  }
+
+  .intro-text,
+  .project-card p {
+    max-width: 31ch;
+  }
+
+  .project-body header {
+    flex-direction: column;
+    gap: 8px;
   }
 
   .project-card {
