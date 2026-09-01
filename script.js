@@ -2,10 +2,10 @@ const projects = [
   {
     title: "Kaijura",
     description:
-      "App de escritorio para leer issues de Jira Server/Data Center y organizar un kanban local sin modificar Jira.",
+      "Aplicación de escritorio para leer incidencias de Jira Server/Data Center y organizar un kanban local sin modificar Jira.",
     href: "https://disboard.es/Kaijura/",
     image: "assets/projects/kaijura.png",
-    imageAlt: "Pagina principal de Kaijura",
+    imageAlt: "Página principal de Kaijura",
     tags: ["WPF", "Jira", "WebView2"],
     status: "Desktop",
     tone: "pink",
@@ -14,7 +14,7 @@ const projects = [
   {
     title: "Schedulime",
     description:
-      "Calendario semanal de estrenos anime con recomendaciones, estados locales y soporte offline tras la primera carga.",
+      "Calendario semanal de estrenos de anime con recomendaciones, estados locales y soporte offline tras la primera carga.",
     href: "https://disboard.es/Schedulime/",
     image: "assets/projects/schedulime.png",
     imageAlt: "Calendario semanal de Schedulime",
@@ -25,12 +25,12 @@ const projects = [
     piece: "♖",
   },
   {
-    title: "Curriculum",
+    title: "Currículum",
     description:
-      "CV estatico en espanol, preparado para GitHub Pages y para impresion en formato A4.",
+      "CV estático en español, preparado para GitHub Pages y para impresión en formato A4.",
     href: "https://disboard.es/Curriculum/",
     image: "assets/projects/curriculum.png",
-    imageAlt: "Presentacion del repositorio Curriculum",
+    imageAlt: "Presentación del repositorio Currículum",
     tags: ["Python", "HTML", "CV"],
     status: "Web",
     tone: "gold",
@@ -39,10 +39,10 @@ const projects = [
   {
     title: "Tebloqueo",
     description:
-      "App para la bandeja del sistema de Windows que indica si hay futbol y se actualiza automaticamente.",
+      "Aplicación para la bandeja del sistema de Windows que indica si hay fútbol y se actualiza automáticamente.",
     href: "https://disboard.es/Tebloqueo/",
     image: "assets/projects/tebloqueo.png",
-    imageAlt: "Pagina principal de Tebloqueo",
+    imageAlt: "Página principal de Tebloqueo",
     imagePosition: "left",
     tags: ["C#", "WinForms", "Windows"],
     status: "Desktop",
@@ -52,13 +52,13 @@ const projects = [
   {
     title: "RpgLingo",
     description:
-      "Traductor automatico para juegos RPG Maker MV/MZ con soporte para DeepL, Google Cloud y Azure.",
+      "Traductor automático para juegos RPG Maker MV/MZ con soporte para DeepL, Google Cloud y Azure.",
     href: "https://github.com/RASK18/RpgLingo",
     linkLabel: "Ver en GitHub",
     image: "assets/projects/rpglingo.png",
     imageAlt: "Logotipo de RpgLingo",
     imageFit: "contain",
-    tags: ["C#", "RPG Maker", "Traduccion"],
+    tags: ["C#", "RPG Maker", "Traducción"],
     status: "Desktop",
     tone: "cyan",
     piece: "♜",
@@ -66,13 +66,13 @@ const projects = [
   {
     title: "JiraCopyTitleButton",
     description:
-      "Utilidad para copiar desde Jira el identificador y el titulo de una tarea, incluyendo su enlace.",
+      "Utilidad para copiar desde Jira el identificador y el título de una tarea, incluido su enlace.",
     href: "https://github.com/RASK18/JiraCopyTitleButton",
     linkLabel: "Ver en GitHub",
     image: "assets/projects/jiracopytitlebutton.png",
     imageAlt: "Icono de JiraCopyTitleButton",
     imageFit: "contain",
-    tags: ["JavaScript", "Jira", "Extension"],
+    tags: ["JavaScript", "Jira", "Extensión"],
     status: "GitHub",
     tone: "gold",
     piece: "♖",
@@ -80,10 +80,10 @@ const projects = [
   {
     title: "TopTag",
     description:
-      "TopTag is a static Steam library tag analyzer backed by a small Cloudflare Worker.",
+      "Analizador estático de las etiquetas más frecuentes de una biblioteca de Steam, respaldado por un Worker de Cloudflare.",
     href: "https://disboard.es/TopTag/",
     image: "assets/projects/toptag.png",
-    imageAlt: "Pagina principal de TopTag",
+    imageAlt: "Página principal de TopTag",
     tags: ["HTML", "Landing", "Steam"],
     status: "Web",
     tone: "pink",
@@ -106,7 +106,7 @@ function createProjectCard(project) {
   if (project.imagePosition === "left") previewClasses.push("is-left");
 
   const preview = project.image
-    ? `<img class="${previewClasses.join(" ")}" src="${escapeAttribute(project.image)}" alt="${escapeAttribute(project.imageAlt || `Previsualizacion de ${project.title}`)}" loading="lazy" decoding="async">`
+    ? `<img class="${previewClasses.join(" ")}" src="${escapeAttribute(project.image)}" alt="${escapeAttribute(project.imageAlt || `Previsualización de ${project.title}`)}" loading="lazy" decoding="async">`
     : `<span class="thumb-piece" aria-hidden="true">${escapeHtml(project.piece || "♜")}</span>`;
 
   article.dataset.tone = project.tone || "pink";
@@ -120,7 +120,7 @@ function createProjectCard(project) {
         <span class="status">${escapeHtml(project.status)}</span>
       </header>
       <p>${escapeHtml(project.description)}</p>
-      <ul class="tag-list" aria-label="Tecnologias">${tags}</ul>
+      <ul class="tag-list" aria-label="Tecnologías">${tags}</ul>
       <a class="project-link" href="${escapeAttribute(project.href)}">${escapeHtml(project.linkLabel || "Abrir proyecto")}</a>
     </div>
   `;
